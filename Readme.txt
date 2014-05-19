@@ -48,7 +48,7 @@ Supported Opcodes
 [ ]        D021 - String Compare Memory[I] != Memory[S]
 [ ]        D022 - String Memory[I] Contains Memory[S]
 [ ]        D023 - String Memory[I] Append Memory[S]
-[ ]        D034 - Set N to String Length
+[ ]        D034 - Set S to String Length
 
            Stack Functions
 [X]        D0A0 - Push I
@@ -58,24 +58,26 @@ Supported Opcodes
 [X]        D0A4 - Clear Stack
 
            Directory Functions
-[X]        D0D0 - Create Directory at Address I
-[X]        D0D1 - Set VE if Directory Exists at Address I
-[ ]        D0D2 - Delete Directory at Address I
+[X]        D0D0 - Create Directory Memory[I]
+[X]        D0D1 - Set VE if Directory Memory[I] Exists
+[ ]        D0D2 - Delete Directory Memory[I]
 
            File Functions
-[ ]        D0F0 - Create File
-[ ]        D0F1 - Set VE if File Exists at Memory[I]
+[X]        D0F0 - Create File
+[X]        D0F1 - Set VE if File Exists at Memory[I]
 [X]        D0F3 - Read Text File into Memory[I] starting at Memory[S]
 [X]        D0F4 - Read Binary File into Memory[I] starting at Memory[S]
 [ ]        D0F5 - Write Text Memory[I] Size V0 to Memory[S] File
 [ ]        D0F6 - Write Binary Memory[I] Size V0 to Memory[S] File
-[ ]        ENNN - Sets S to NNN
+[X]        ENNN - Sets S to NNN
 
 [X] FX1E - Adds VX to I
 
 [ ] FX33 - Stores the Binary-coded decimal representation of VX
 [X] FX55 - Stores V0 to VX in memory starting at address I
 [X] FX65 - Fills V0 to VX with values from memory starting at address I
-[X]        FFFD - Load Memory at I into execution memory starting at V0 size VF  (Load Memory[I] to Memory[512 (0x200) + V0)])
-[X] FFFE - End Program
-[X] FFFF - Reset
+[ ]        FFFB -  
+[ ]        FFFC - Dump Ram and Code binary files
+[X]        FFFD - Load Memory[I] into memory starting at S size VF  (Load Memory[I] to Memory[512 (0x200) + S)])
+[X]        FFFE - End Program
+[X]        FFFF - Reset Machine
